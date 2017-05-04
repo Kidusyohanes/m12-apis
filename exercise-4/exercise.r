@@ -43,7 +43,7 @@ Director(movie)
 # movies. 
 
 # Start by making a vecotr of movies and save it to the variable movie.list
-movie.list <- paste("",)
+# movie.list <- paste("",)
 # Write a function to make your API request and process the data
 
   # Make a variable called request that is a string of a request URL made up of the base URL

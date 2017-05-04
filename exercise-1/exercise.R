@@ -11,14 +11,18 @@ library(jsonlite)
 # base.url <- 'https://' 
 
 response <- GET("http://data.unhcr.org/api/stats/time_series_years.json")
+
 response.content <- content(response, "text")
+
 body.data <- fromJSON(response.content)
 
 is.data.frame(body.data)
 
 
 # What is the "country code" for the "Syrian Arab Republic"?
-response <- GET("")
+response <- GET("https://data.unhr.org/api/countries/list.json")
+countries <- fromJSON(content(response, "text"))
+filter(countries, name_en == "Syrian Arab Republic") %>% select(country_code)
 
 # How many persons of concern from Syria applied for residence in the USA in 2013?
 # Hint: you'll need to use a query parameter
